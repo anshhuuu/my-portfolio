@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ansh Viradiya — AI/ML Engineer</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #fafaf8;
+      --gray-50: #f5f4f0;
+      --gray-100: #e8e7e2;
+      --gray-300: #b0afa8;
+      --gray-500: #6e6d68;
+      --gray-700: #3a3a37;
+      --line: rgba(0, 0, 0, 0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 4rem;
+      background: rgba(250, 250, 248, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--black);
+    }
+
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+    }
+
+    .hero-left {
+      padding: 8rem 4rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 700px;
+    }
+
+    .hero-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--gray-500);
+    }
+
+    .hero-bio {
+      font-size: 1rem;
+      color: var(--gray-500);
+      max-width: 38ch;
+      line-height: 1.85;
+      margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+    }
+
+    .btn-dark:hover {
+      background: var(--gray-700);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--gray-300);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--black);
+    }
+
+    .hero-right {
+      padding: 8rem 4rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 2rem;
+    }
+
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--black);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      margin-top: 0.4rem;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-top: 3rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.77rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--gray-500);
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
+
+    .icon-link:hover {
+      color: var(--black);
+      border-color: var(--black);
+    }
+
+    section {
+      padding: 6rem 4rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      font-weight: 400;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+      max-width: 200px;
+    }
+
+    #about {
+      background: var(--gray-50);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-grid {
+      display: block;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.88rem;
+    }
+
+    .detail-row:first-child {
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-key {
+      color: var(--gray-300);
+    }
+
+    .detail-val {
+      color: var(--black);
+      text-align: right;
+    }
+
+    #skills {
+      background: var(--white);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+    }
+
+    .skill-card {
+      padding: 2.5rem;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: background 0.2s;
+    }
+
+    .skill-card:hover {
+      background: var(--gray-50);
+    }
+
+    .skill-card:nth-child(3n) {
+      border-right: none;
+    }
+
+    .skill-card:nth-last-child(-n+3) {
+      border-bottom: none;
+    }
+
+    .skill-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 1.25rem;
+      opacity: 0.4;
+    }
+
+    .skill-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.22rem 0.55rem;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: 2px;
+      color: var(--gray-700);
+      font-weight: 300;
+    }
+
+    #projects {
+      background: var(--gray-50);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .filter-tabs {
+      display: flex;
+      margin-bottom: 3rem;
+      border: 1px solid var(--line);
+      width: fit-content;
+    }
+
+    .filter-tab {
+      padding: 0.6rem 1.4rem;
+      font-size: 0.74rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--gray-500);
+      background: var(--white);
+      border: none;
+      border-right: 1px solid var(--line);
+      transition: all 0.15s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .filter-tab:last-child {
+      border-right: none;
+    }
+
+    .filter-tab.active {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .filter-tab:hover:not(.active) {
+      background: var(--gray-50);
+      color: var(--black);
+    }
+
+    .project-item {
+      display: grid;
+      grid-template-columns: 56px 1fr 150px;
+      gap: 2.5rem;
+      align-items: start;
+      padding: 2.75rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-item:first-child {
+      border-top: 1px solid var(--line);
+    }
+
+    .project-item.hidden {
+      display: none;
+    }
+
+    .project-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.82rem;
+      color: var(--gray-300);
+      padding-top: 0.3rem;
+    }
+
+    .project-category {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.5rem;
+      background: var(--gray-100);
+      color: var(--gray-500);
+      border-radius: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
+
+    .project-item:hover .project-title {
+      color: var(--gray-500);
+    }
+
+    .project-desc {
+      font-size: 0.87rem;
+      color: var(--gray-500);
+      line-height: 1.8;
+      max-width: 64ch;
+    }
+
+    .project-meta {
+      text-align: right;
+    }
+
+    .project-date {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: flex-end;
+      margin-bottom: 0.65rem;
+    }
+
+    .project-gh {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .project-gh:hover {
+      color: var(--black);
+    }
+
+    #experience {
+      background: var(--white);
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .exp-item:first-child {
+      border-top: 1px solid var(--line);
+    }
+
+    .exp-company {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--black);
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-role {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      margin-bottom: 0.4rem;
+    }
+
+    .exp-date {
+      font-size: 0.8rem;
+      color: var(--gray-300);
+    }
+
+    .exp-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .exp-points li {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .exp-points li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gray-300);
+    }
+
+    #education {
+      background: var(--gray-50);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .edu-card {
+      padding: 2.5rem;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .edu-degree {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .edu-school {
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-year {
+      font-size: 0.72rem;
+      color: var(--gray-300);
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+
+    .edu-grade {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      color: var(--black);
+    }
+
+    .edu-grade-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+    }
+
+    #achievement {
+      background: var(--white);
+    }
+
+    .ach-card {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 2.5rem 3rem;
+      border: 1px solid var(--line);
+      background: var(--gray-50);
+    }
+
+    .ach-icon {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--gray-300);
+      flex-shrink: 0;
+    }
+
+    .ach-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--black);
+      margin-bottom: 0.3rem;
+    }
+
+    .ach-desc {
+      font-size: 0.88rem;
+      color: var(--gray-500);
+    }
+
+    #contact {
+      background: var(--black);
+    }
+
+    #contact .section-label {
+      color: rgba(255, 255, 255, 0.22);
+    }
+
+    #contact .section-label::after {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: end;
+    }
+
+    .contact-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .contact-heading em {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .contact-sub {
+      margin-top: 1.5rem;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.38);
+      max-width: 38ch;
+      line-height: 1.85;
+    }
+
+    .contact-link-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .contact-link-row:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .contact-link-row:hover .link-label {
+      color: var(--white);
+    }
+
+    .contact-link-row:hover .link-arrow {
+      opacity: 1;
+    }
+
+    .link-icon-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .link-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      opacity: 0.45;
+      transition: opacity 0.2s;
+    }
+
+    .contact-link-row:hover .link-icon-wrap svg {
+      opacity: 1;
+    }
+
+    .link-label {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.45);
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+
+    .link-arrow {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.25);
+      opacity: 0.3;
+      transition: opacity 0.2s;
+    }
+
+    footer {
+      padding: 1.5rem 4rem;
+      background: var(--black);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer p {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.18);
+      letter-spacing: 0.06em;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-tag {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-name {
+      animation: fadeUp 0.7s 0.08s ease both;
+    }
+
+    .hero-bio {
+      animation: fadeUp 0.7s 0.18s ease both;
+    }
+
+    .hero-cta {
+      animation: fadeUp 0.7s 0.28s ease both;
+    }
+
+    .hero-stats {
+      animation: fadeUp 0.8s 0.38s ease both;
+    }
+
+    .hero-links {
+      animation: fadeUp 0.8s 0.48s ease both;
+    }
+
+    @media (max-width: 960px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      #hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left {
+        padding: 7rem 1.5rem 3rem;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-right {
+        padding: 3rem 1.5rem;
+      }
+
+      .about-grid,
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .skill-card:nth-child(3n) {
+        border-right: 1px solid var(--line);
+      }
+
+      .skill-card:nth-child(2n) {
+        border-right: none;
+      }
+
+      .project-item {
+        grid-template-columns: 40px 1fr;
+      }
+
+      .project-meta {
+        grid-column: 2;
+        text-align: left;
+      }
+
+      .project-stack {
+        justify-content: flex-start;
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .edu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .ach-card {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#hero" class="nav-logo">Ansh Viradiya</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-tag">AI/ML Engineer · Ahmedabad, India</p>
+      <h1 class="hero-name">Ansh<br><em>Viradiya</em></h1>
+      <p class="hero-bio">Building intelligent systems at the intersection of Generative AI, RAG Architecture, and
+        Multi-Agent Systems. Currently pursuing B.E. in AIML at LDCE Ahmedabad.</p>
+      <div class="hero-cta">
+        <a href="mailto:anshviradiya2411@gmail.com" class="btn btn-dark">Get in Touch</a>
+        <a href="#projects" class="btn btn-outline">View Projects</a>
+      </div>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/ansh-viradiya-a1383b26a/" target="_blank" class="icon-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+          </svg>LinkedIn
+        </a>
+        <a href="https://github.com/cccanshviradiya" target="_blank" class="icon-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>GitHub
+        </a>
+        <a href="mailto:anshviradiya2411@gmail.com" class="icon-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <polyline points="2,4 12,13 22,4" />
+          </svg>Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-label">About</div>
+    <div class="about-text">
+      <p>I'm an AI/ML engineering student at L.D. College of Engineering, Ahmedabad, specialising in building
+        production-grade intelligent systems. My work spans RAG pipelines, multi-agent automation, and deep learning
+        applications.</p>
+      <p>With hands-on experience at IBM Skill-Build and ModelsLab, I've moved from theory to deployment — building
+        real systems that handle real interactions. I'm drawn to the architecture of intelligent agents and how they
+        can automate complex, multi-step workflows.</p>
+      <p>Outside of code, I find balance in folk dance and travel — two things that keep me grounded and curious about
+        the world.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-label">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
+          <polyline points="7,11 2,16 7,21" />
+          <polyline points="25,11 30,16 25,21" />
+          <line x1="18" y1="5" x2="14" y2="27" />
+        </svg>
+        <div class="skill-title">Languages</div>
+        <div class="skill-tags"><span class="tag">Python</span><span
+            class="tag">C/C++</span><span class="tag">SQL</span></div>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="16" cy="16" r="5" />
+          <circle cx="16" cy="16" r="12" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="16" y1="26" x2="16" y2="30" />
+          <line x1="2" y1="16" x2="6" y2="16" />
+          <line x1="26" y1="16" x2="30" y2="16" />
+        </svg>
+        <div class="skill-title">AI / ML / DL</div>
+        <div class="skill-tags"><span class="tag">TensorFlow</span><span class="tag">Keras</span><span
+            class="tag">Scikit-learn</span><span class="tag">HuggingFace</span><span class="tag">NLTK</span><span
+            class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span
+            class="tag">Plotly</span><span class="tag">OCR</span></div>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="3" y="9" width="9" height="9" rx="1" />
+          <rect x="20" y="9" width="9" height="9" rx="1" />
+          <rect x="11.5" y="20" width="9" height="9" rx="1" />
+          <line x1="7.5" y1="18" x2="16" y2="20" />
+          <line x1="24.5" y1="18" x2="16" y2="20" />
+        </svg>
+        <div class="skill-title">Generative & Agentic AI</div>
+        <div class="skill-tags"><span class="tag">LangChain</span><span class="tag">RAG Pipelines</span><span class="tag">Prompt Engineering</span><span
+            class="tag">Multi-Agent Systems</span><span class="tag">Gemini</span><span class="tag">Groq</span></div>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
+          <ellipse cx="16" cy="11" rx="12" ry="4" />
+          <path d="M4 11v5c0 2.2 5.4 4 12 4s12-1.8 12-4v-5" />
+          <path d="M4 16v5c0 2.2 5.4 4 12 4s12-1.8 12-4v-5" />
+        </svg>
+        <div class="skill-title">Databases & Vector Stores</div>
+        <div class="skill-tags"><span class="tag">FAISS</span><span class="tag">BM25</span><span
+            class="tag">SQLite</span><span class="tag">PostgreSQL</span></div>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="3" y="5" width="26" height="18" rx="2" />
+          <line x1="12" y1="23" x2="9" y2="29" />
+          <line x1="20" y1="23" x2="23" y2="29" />
+          <line x1="8" y1="29" x2="24" y2="29" />
+        </svg>
+        <div class="skill-title">Frameworks & APIs</div>
+        <div class="skill-tags"><span class="tag">FastAPI</span><span class="tag">Streamlit</span><span
+            class="tag">n8n</span><span class="tag">PyMuPDF</span></div>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="16" cy="16" r="3" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="16" y1="26" x2="16" y2="30" />
+          <line x1="2" y1="16" x2="6" y2="16" />
+          <line x1="26" y1="16" x2="30" y2="16" />
+          <line x1="5.64" y1="5.64" x2="8.46" y2="8.46" />
+          <line x1="23.54" y1="23.54" x2="26.36" y2="26.36" />
+          <line x1="23.54" y1="8.46" x2="26.36" y2="5.64" />
+          <line x1="5.64" y1="26.36" x2="8.46" y2="23.54" />
+        </svg>
+        <div class="skill-title">Tools & Platforms</div>
+        <div class="skill-tags"><span class="tag">Git</span><span class="tag">Tableau</span><span
+            class="tag">Docker</span><span class="tag">Streamlit Cloud</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-label">Projects</div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterProjects('all',this)">All (11)</button>
+      <button class="filter-tab" onclick="filterProjects('rag',this)">RAG</button>
+      <button class="filter-tab" onclick="filterProjects('agent',this)">Agents</button>
+      <button class="filter-tab" onclick="filterProjects('nlp',this)">NLP</button>
+      <button class="filter-tab" onclick="filterProjects('data',this)">Data</button>
+      <button class="filter-tab" onclick="filterProjects('cv',this)">Vision</button>
+    </div>
+    <div id="projectsList">
+
+      <div class="project-item" data-cat="rag agent">
+        <div class="project-num">01</div>
+        <div>
+          <span class="project-category">RAG · Agents</span>
+          <h3 class="project-title">NCERT RAG System — Physics, Chemistry & Mathematics</h3>
+          <p class="project-desc">Production-grade RAG pipeline over NCERT textbooks with hybrid chunking, LaTeX
+            normalization for maths, SMILES/IUPAC parsing for chemistry, and a fine-tuned LLM backbone with multi-hop
+            reasoning across chapters.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">Jan – Feb '26</span>
+          <div class="project-stack"><span class="tag">LangChain</span><span class="tag">FAISS</span><span
+              class="tag">FastAPI</span><span class="tag">Mistral</span></div>
+          <a href="https://github.com/cccanshviradiya/textbook-RAG" target="_blank" class="project-gh"><svg width="11"
+              height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg> GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item" data-cat="agent">
+        <div class="project-num">02</div>
+        <div>
+          <span class="project-category">Agents</span>
+          <h3 class="project-title">Multi-Agent Hospital Appointment Bot</h3>
+          <p class="project-desc">Deployed multi-agent Telegram bot for hospital appointment automation via n8n
+            orchestration. Specialized agents handle booking, cancellations, rescheduling, invoicing, and lab report
+            delivery from hospital software in real time.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">Feb – Mar '26</span>
+          <div class="project-stack"><span class="tag">n8n</span><span class="tag">Telegram API</span><span
+              class="tag">JavaScript</span><span class="tag">Google Sheets</span></div>
+        </div>
+      </div>
+
+      <div class="project-item" data-cat="data">
+        <div class="project-num">03</div>
+        <div>
+          <span class="project-category">ML · Data</span>
+          <h3 class="project-title">Stock Price Prediction — LSTM & Technical Indicators</h3>
+          <p class="project-desc">Streamlit web app forecasting 1–15 day NSE stock prices using LSTM with RSI, SMA, EMA,
+            and 52-week high/low indicators. Includes SMA-based fallback, dynamic charts, and CSV export.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">Jun – Jul '25</span>
+          <div class="project-stack"><span class="tag">TensorFlow</span><span class="tag">Streamlit</span><span
+              class="tag">yfinance</span><span class="tag">Pandas</span></div>
+          <a href="https://github.com/anshhuuu/Stock-Price-Prediction-using-LSTM" target="_blank"
+            class="project-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg> GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item" data-cat="rag">
+        <div class="project-num">04</div>
+        <div>
+          <span class="project-category">RAG</span>
+          <h3 class="project-title">RAG System from Scratch</h3>
+          <p class="project-desc">RAG pipeline built without LangChain or vector databases — semantic chunking,
+            HuggingFace embeddings in SQLite, manual cosine similarity retrieval, and Gemini LLM for grounded Q&A with
+            computed confidence scoring.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">GitHub</span>
+          <div class="project-stack"><span class="tag">FastAPI</span><span class="tag">HuggingFace</span><span
+              class="tag">SQLite</span><span class="tag">Gemini</span></div>
+          <a href="https://github.com/cccanshviradiya/rag-system" target="_blank" class="project-gh"><svg width="11"
+              height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg> GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item" data-cat="rag">
+        <div class="project-num">05</div>
+        <div>
+          <span class="project-category">RAG</span>
+          <h3 class="project-title">Software Document RAG</h3>
+          <p class="project-desc">High-performance document RAG with hybrid FAISS dense + BM25 keyword retrieval fused
+            via Reciprocal Rank Fusion. Supports PDF, TXT, and Markdown with smart semantic chunking, Groq/Llama 3
+            generation, and Docker deployment.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">GitHub</span>
+          <div class="project-stack"><span class="tag">FAISS</span><span class="tag">BM25</span><span
+              class="tag">Groq</span><span class="tag">Streamlit</span><span class="tag">Docker</span></div>
+          <a href="https://github.com/cccanshviradiya/Software-Document-Rag-" target="_blank" class="project-gh"><svg
+              width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg> GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item" data-cat="cv">
+        <div class="project-num">06</div>
+        <div>
+          <span class="project-category">Computer Vision · AI</span>
+          <h3 class="project-title">Virtual Try-On — AI Jewellery Experience</h3>
+          <p class="project-desc">Real-time AI jewellery try-on app using MediaPipe FaceMesh &amp; Hands for precise landmark detection and OpenCV for seamless alpha-blended overlays. Supports necklaces, earrings, rings, and bracelets via live webcam or image upload.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">Feb – Mar '26</span>
+          <div class="project-stack"><span class="tag">MediaPipe</span><span class="tag">OpenCV</span><span
+              class="tag">Streamlit</span><span class="tag">Docker</span></div>
+          <a href="https://github.com/cccanshviradiya/virtual_tryon" target="_blank" class="project-gh"><svg width="11"
+              height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg> GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item" data-cat="rag">
+        <div class="project-num">07</div>
+        <div>
+          <span class="project-category">RAG</span>
+          <h3 class="project-title">Syllabus RAG System</h3>
+          <p class="project-desc">RAG system built for academic syllabi — enabling students and educators to query
+            curriculum content intelligently with accurate, context-grounded retrieval and a clean Streamlit interface.
+          </p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">GitHub</span>
+          <div class="project-stack"><span class="tag">Python</span><span class="tag">Streamlit</span><span
+              class="tag">RAG</span></div>
+          <a href="https://github.com/cccanshviradiya/syllabus-rag-system" target="_blank" class="project-gh"><svg
+              width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg> GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item" data-cat="nlp">
+        <div class="project-num">08</div>
+        <div>
+          <span class="project-category">NLP</span>
+          <h3 class="project-title">N-Gram Sentence Completion System</h3>
+          <p class="project-desc">4-gram language model built from scratch without any ML libraries. Features a backoff
+            strategy (4→3→2→1-gram) and temperature-based sampling. Upload custom training corpora and generate text
+            interactively via Streamlit.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">GitHub</span>
+          <div class="project-stack"><span class="tag">Python</span><span class="tag">Streamlit</span><span
+              class="tag">N-gram</span></div>
+          <a href="https://github.com/cccanshviradiya/-N-Gram-Sentence-Completion-System" target="_blank"
+            class="project-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg> GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item" data-cat="data">
+        <div class="project-num">09</div>
+        <div>
+          <span class="project-category">Data Science</span>
+          <h3 class="project-title">Universal Data Profiling & EDA App</h3>
+          <p class="project-desc">Comprehensive Streamlit app for automatic profiling on any CSV or Excel dataset —
+            feature summaries, quality checks (missing values, type mismatches, duplicates), correlation heatmaps,
+            IQR-based outlier detection, and interactive Plotly visualizations.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">GitHub</span>
+          <div class="project-stack"><span class="tag">Pandas</span><span class="tag">Plotly</span><span
+              class="tag">Seaborn</span><span class="tag">Streamlit</span></div>
+          <a href="https://github.com/cccanshviradiya/Data-Profiling-Basic-EDA-App" target="_blank"
+            class="project-gh"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg> GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-item" data-cat="rag data">
+        <div class="project-num">10</div>
+        <div>
+          <span class="project-category">RAG · Database</span>
+          <h3 class="project-title">Database Chat System — Natural Language to SQL</h3>
+          <p class="project-desc">Modular Streamlit app that lets users query PostgreSQL databases in plain English. Gemini AI converts natural language to read-only SQL with schema auto-discovery via RAG, persistent chat history for follow-up questions, and Aiven DB cloud connectivity.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-date">Jan '26</span>
+          <div class="project-stack"><span class="tag">Gemini AI</span><span class="tag">PostgreSQL</span><span
+              class="tag">Streamlit</span><span class="tag">RAG</span><span class="tag">Groq</span></div>
+          <a href="https://github.com/cccanshviradiya/Database-Chat-System" target="_blank" class="project-gh"><svg width="11"
+              height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg> GitHub ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-label">Work Experience</div>
+    <div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-company">IBM Skill-Build</div>
+          <div class="exp-role">Artificial Intelligence Intern</div>
+          <div class="exp-date">Jul – Aug 2024</div>
+        </div>
+        <ul class="exp-points">
+          <li>Completed IBM Skill-Build Summer Internship focused on Generative AI, prompt engineering, and chatbot
+            development using IBM Watson Assistant.</li>
+          <li>Crafted conversational designs and optimized prompts for response relevance across customer support
+            scenarios.</li>
+          <li>Embedded chatbots into web platforms, enabling end-to-end customer support automation.</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-company">ModelsLab</div>
+          <div class="exp-role">Data Acquisition Intern</div>
+          <div class="exp-date">Oct – Nov 2024</div>
+        </div>
+        <ul class="exp-points">
+          <li>Collected, cleaned, and prepared large-scale speech datasets for ML model training, with noise reduction
+            and systematic preprocessing.</li>
+          <li>Collaborated with the technical team to build robust data pipelines for AI-driven production projects.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-label">Education</div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree">B.E. — Artificial Intelligence & Machine Learning</div>
+        <div class="edu-school">LDCE Ahmedabad · GTU</div>
+        <div class="edu-year">2022 – 2026</div>
+        <div class="edu-grade">8.46</div>
+        <div class="edu-grade-label">CGPA</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Higher Secondary Education</div>
+        <div class="edu-school">Sandipani Vidhyalaya · GSEB</div>
+        <div class="edu-year">2020 – 2022</div>
+        <div class="edu-grade">80.92%</div>
+        <div class="edu-grade-label">Percentage</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Secondary School Certificate</div>
+        <div class="edu-school">Swaminarayan Gurukul · GSEB</div>
+        <div class="edu-year">2020</div>
+        <div class="edu-grade">88.50%</div>
+        <div class="edu-grade-label">Percentage</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievement">
+    <div class="section-label">Achievement</div>
+    <div class="ach-card">
+      <div class="ach-icon">◆</div>
+      <div>
+        <div class="ach-title">Top 10 Finalist — HACKA-NUTHON 6.0, 2025</div>
+        <div class="ach-desc">Selected among the top teams for developing an innovative AI-powered chatbot solution out
+          of all competing teams nationwide.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-heading">Let's build<br><em>something</em><br>together.</h2>
+        <p class="contact-sub">Open to internships, collaborations, and interesting AI/ML projects. Don't hesitate to
+          reach out.</p>
+      </div>
+      <div>
+        <a href="mailto:anshviradiya2411@gmail.com" class="contact-link-row">
+          <span class="link-icon-wrap">
+            <!-- Gmail icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+            </svg>
+            <span class="link-label">anshviradiya2411@gmail.com</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a href="https://www.linkedin.com/in/ansh-viradiya-a1383b26a/" target="_blank" class="contact-link-row">
+          <span class="link-icon-wrap">
+            <!-- LinkedIn icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span class="link-label">LinkedIn</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a href="https://github.com/cccanshviradiya" target="_blank" class="contact-link-row">
+          <span class="link-icon-wrap">
+            <!-- GitHub icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            <span class="link-label">GitHub</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+        <a href="tel:+917874916391" class="contact-link-row">
+          <span class="link-icon-wrap">
+            <!-- Phone icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span class="link-label">+91 78749 16391</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ansh Viradiya</p>
+    <p>Ahmedabad, India</p>
+  </footer>
+
+  <script>
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      const items = document.querySelectorAll('.project-item');
+      let idx = 1;
+      items.forEach(item => {
+        const cats = item.getAttribute('data-cat') || '';
+        const show = cat === 'all' || cats.includes(cat);
+        item.classList.toggle('hidden', !show);
+        if (show) {
+          item.querySelector('.project-num').textContent = String(idx).padStart(2, '0');
+          idx++;
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
